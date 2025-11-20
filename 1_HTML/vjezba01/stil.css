@@ -1,0 +1,35 @@
+body{
+    background-color: antiquewhite;
+}
+
+h1{
+    color: rgb(209, 11, 186);
+text-align: center;
+font-size: larger;
+clip-rule: ;
+}
+h2{
+color: blue;
+text-shadow: #00ff11;
+}
+
+.linija{
+    border: 0;
+    height: 6px;
+    background-color: #ff5722;
+    border-radius: 2px;
+}
+#sadrzaj p{
+    font-family: sans-serif;
+    color: blue;
+}
+
+ul{
+    list-style: 
+}
+Ul li::before{
+    content: '👋';
+}
+
+ol{list-style-type: upper-roman;
+}
