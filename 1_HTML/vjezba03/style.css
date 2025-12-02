@@ -1,0 +1,32 @@
+/* https:/cheatsheet.com/css/ */ 
+body
+{
+background: #1C6EA4;
+background: -moz-linear-gradient(left, #1C6EA4 0%, #2388CB 52%, #29753A 100%);
+background: -webkit-linear-gradient(left, #1C6EA4 0%, #2388CB 52%, #29753A 100%);
+background: linear-gradient(to right, #1C6EA4 0%, #2388CB 52%, #29753A 100%);
+
+}
+section{
+    display: grid;
+    grid-template-areas: 
+    ". . a a b"
+    "c c d d b"
+    "e e e e b";
+row-gap: 2rem;
+column-gap: 2rem;
+}
+
+.a{grid-area: a}
+.b{grid-area: b}
+.c{grid-area: c}
+.d{grid-area: d}
+.e{grid-area: e}
+
+div{
+    background-color: #eee;
+border: 5px solid red;
+border-radius: 1rem;
+padding: 2rem;
+font-size: 2rem;
+}
