@@ -1,0 +1,29 @@
+body{
+background-color: #f0f1f0;
+}
+
+table{
+    width: 100vh;
+}
+
+table, td,th{
+ border: 1px solid blue;
+ border-collapse:collapse;
+}
+
+thead th{
+    background-color: antiquewhite;
+text-transform: uppercase;
+}
+
+tbody tr:hover{
+    background-color: aqua;
+}
+
+tbody tr :first-child{
+    text-align: right;
+}
+
+caption{caption-side: bottom;
+}
+
