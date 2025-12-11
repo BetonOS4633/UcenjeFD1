@@ -1,0 +1,31 @@
+body{
+background-color: rgb(182, 198, 213);
+}
+
+.container{
+    background-color: antiquewhite;
+    margin: auto;
+    max-width: 960px;
+    display: grid;
+    grid-template-areas: "a b c d";
+}
+
+.a{
+    grid-area: a;}
+
+.panel{
+    padding 10px;
+    b
+    text-align: center;
+
+}
+
+img{border-radius: 10px;}
+
+
+h1{font-size: 1.5rem;
+font-weight: 800
+;}
+.cijena{color: green;
+font-size: 1.5rem;
+font font-weight: 800;}
