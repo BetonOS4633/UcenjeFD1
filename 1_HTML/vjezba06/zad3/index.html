@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="container">
+        <div class="forma">
+            <h1>Novi korisnik</h1>
+            <form action="#" method="get">
+
+                <div class="unos">
+                    <label for="imeprezime">Ime i prezime:</label>
+                    <input type="text" name="imeprezime" id="imeprezime"
+                    placeholder="Ana Anić">
+                </div>
+            
+            <div class="unos">
+                <label for="email">Email adresa:</label>
+                <input type="email" name="email" id="email"
+                placeholder="npr. ana@email.com">
+            </div>
+
+            <div class="unos">
+                <label for="uloga">Uloga</label>
+                   <select name="Uloga" id="uloga">
+                        <option value="1">Korisnik</option>
+                        <option value="2">Administrator</option>
+                        <option value="3">Urednik</option>
+                       
+                    </select>
+                     
+            </div>
+            
+            <input type="submit" value="Spremi korisnika>"
+            
+        </form>
+    </div>
+    <h1 style="max-width: 350px;">Lista Korisnika</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>IME I PREZIME</th>
+                    <th>EMAIL</th>
+                    <th>ULOGA</th>
+                    <th>AKCIJA</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td>1</td>
+                    <td>Ivan Horvat</td>
+                    <td>ivan@tvrtka.hr</td>
+                    <td>Administrator</td>
+                    <td>Obriši</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Marko Marić</td>
+                    <td>marko@tvrtka.hr</td>
+                    <td>Urednik</td>
+                    <td>Obriši</td>
+                </tr>
+                
+                <tr>
+                    <td>3</td>
+                    <td>Petra Perić</td>
+                    <td>petra@tvrtka.hr</td>
+                    <td>Korisnik</td>
+                    <td>Obriši</td>
+                </tr>
+                
+                <tr>
+                    <td>4</td>
+                    <td>Luka Lukić</td>
+                    <td>luka@tvrtka.hr</td>
+                    <td>Korisnik</td>
+                    <td>Obriši</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+   </div>
+</body>
+</html>
