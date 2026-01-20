@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moj Profil | Brand</title>
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <style>
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .avatar {
+            width: 100px;
+            height: 100px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        .stat-value {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        /* Progres bar za level */
+        .progress-container {
+            background: #e2e8f0;
+            border-radius: 10px;
+            height: 12px;
+            width: 100%;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+        .progress-bar {
+            background: var(--accent);
+            height: 100%;
+            width: 65%; /* Dinamički bi se mijenjalo putem JS-a ili backenda */
+        }
+        .badge-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .badge-item {
+            aspect-ratio: 1/1;
+            background: #f1f5f9;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            opacity: 0.5; /* Lock efekt */
+        }
+        .badge-item.unlocked {
+            opacity: 1;
+            background: #fef3c7;
+            border: 1px solid var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo"><a href="../index.html" style="text-decoration: none; color: inherit;">BRAND</a></div>
+        <nav>
+            <a href="video-hub.html">Video Hub</a>
+            <a href="../index.html">Odjava</a>
+        </nav>
+    </header>
+
+    <main style="padding: 2rem 5%; max-width: 1000px; margin: 0 auto;">
+        
+        <section class="profile-header">
+            <div class="avatar">MK</div>
+            <div>
+                <h1>Marko Kuhinja</h1>
+                <p style="color: #64748b;">Član od: Siječanj, 2026.</p>
+                <span class="badge">Zlatni status</span>
+            </div>
+        </section>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-value">1,250</span>
+                <p>Ukupno bodova</p>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value">12</span>
+                <p>Odgledanih videa</p>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value">#4</span>
+                <p>Rang na ljestvici</p>
+            </div>
+        </div>
+
+        <section class="card" style="padding: 2rem; margin-bottom: 2rem;">
+            <h3>Napredak do sljedećeg nivoa (Level 5)</h3>
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+            <p style="font-size: 0.9rem; color: #64748b;">Još 350 bodova do ekskluzivnog poklona!</p>
+        </section>
+
+        <section>
+            <h3>Tvoje značke</h3>
+            <div class="badge-grid">
+                <div class="badge-item unlocked">🏅<br>Prvi video</div>
+                <div class="badge-item unlocked">🔥<br>7 dana niz</div>
+                <div class="badge-item">🔒<br>Video Guru</div>
+                <div class="badge-item">🔒<br>Top 1%</div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer style="text-align: center; padding: 3rem; color: #94a3b8;">
+        &copy; Platforma
+    </footer>
+
+</body>
+</html>

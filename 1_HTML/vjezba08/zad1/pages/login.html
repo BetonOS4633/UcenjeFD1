@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prijava | Brand</title>
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <style>
+        /* Specifični stilovi samo za login stranicu */
+        .login-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            padding: 1rem;
+        }
+        .login-form {
+            width: 100%;
+            max-width: 400px;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        .login-form h2 {
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        .login-form p {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+        .form-footer {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+        .form-footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo"><a href="../index.html" style="text-decoration: none; color: inherit;">BRAND</a></div>
+        <nav>
+            <a href="../index.html">Početna</a>
+        </nav>
+    </header>
+
+    <main class="login-wrapper">
+        <section class="login-form">
+            <h2>Dobrodošli natrag</h2>
+            <p>Prijavite se kako biste nastavili sakupljati bodove.</p>
+            
+            <form action="#">
+                <div class="input-group">
+                    <label for="email" style="display:block; margin-bottom: 0.5rem; font-size: 0.9rem;">E-mail adresa</label>
+                    <input type="email" id="email" placeholder="ime@primjer.hr" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password" style="display:block; margin-bottom: 0.5rem; font-size: 0.9rem;">Lozinka</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Prijavi se</button>
+            </form>
+
+            <div class="form-footer">
+                Nemate račun? <a href="#">Registrirajte se</a>
+            </div>
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 2rem; color: #94a3b8; font-size: 0.8rem;">
+        &copy; Platforma
+    </footer>
+
+</body>
+</html>

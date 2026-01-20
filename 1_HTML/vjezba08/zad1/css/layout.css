@@ -1,0 +1,71 @@
+/* Osnovne postavke i varijable */
+:root {
+    --primary: #2563eb;
+    --dark: #0f172a;
+    --light: #f8fafc;
+    --accent: #f59e0b;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    line-height: 1.6;
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+/* Navigacija */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo span { color: var(--primary); font-weight: bold; }
+
+nav a { text-decoration: none; margin-left: 1rem; color: var(--dark); }
+
+/* Hero sekcija */
+.hero {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: linear-gradient(to bottom, #e2e8f0, var(--light));
+}
+
+/* Grid sustav */
+.grid-container {
+    display: grid;
+    gap: 1.5rem;
+    padding: 2rem 5%;
+    grid-template-columns: 1fr; /* Mobitel: 1 stupac */
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+
+/* --- MEDIA QUERIES --- */
+
+/* 1. Tablet (širina iznad 768px) */
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 stupca */
+    }
+    .hero h1 { font-size: 2.5rem; }
+}
+
+/* 2. Desktop (širina iznad 1024px) */
+@media (min-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 stupca */
+    }
+    .navbar { padding: 1rem 10%; }
+    main { max-width: 1200px; margin: 0 auto; }
+}

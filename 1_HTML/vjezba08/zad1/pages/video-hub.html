@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Hub | Brand</title>
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <style>
+        .video-featured {
+            background: #000;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        .video-placeholder {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: linear-gradient(45deg, #1e293b, #334155);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .video-info {
+            padding: 1.5rem;
+            background: white;
+        }
+        .video-grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        }
+        .video-card-thumb {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #cbd5e1;
+            border-radius: 12px;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: #64748b;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        .video-card-thumb:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo"><a href="../index.html" style="text-decoration: none; color: inherit;">BRAND</a></div>
+        <nav>
+            <a href="../index.html">Početna</a>
+            <a href="profile.html">Moj Profil</a>
+        </nav>
+    </header>
+
+    <main style="padding: 2rem 5%; max-width: 1200px; margin: 0 auto;">
+        
+        <section class="video-featured">
+            <div class="video-placeholder">
+                <p>▶ Glavni Video Player (Placeholder)</p>
+            </div>
+            <div class="video-info">
+                <span class="badge">Istaknuto</span>
+                <h1 style="margin: 0.5rem 0;">Sezona 2025: Kako započeti?</h1>
+                <p style="color: #64748b;">Pogledajte uvodni video i osvojite prvih 10 bodova za svoj profil.</p>
+            </div>
+        </section>
+
+        <h2 style="margin-bottom: 1.5rem;">Svi video materijali</h2>
+        <section class="video-grid">
+            
+            <div class="video-item">
+                <div class="video-card-thumb">Video Thumbnail 1</div>
+                <h4>Tutorial: Gamifikacija</h4>
+                <p style="font-size: 0.85rem; color: #64748b;">Trajanje: 5:20</p>
+                <a href="#" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top: 0.5rem;">Gledaj</a>
+            </div>
+
+            <div class="video-item">
+                <div class="video-card-thumb">Video Thumbnail 2</div>
+                <h4>Intervju s pobjednikom</h4>
+                <p style="font-size: 0.85rem; color: #64748b;">Trajanje: 12:45</p>
+                <a href="#" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top: 0.5rem;">Gledaj</a>
+            </div>
+
+            <div class="video-item">
+                <div class="video-card-thumb">Video Thumbnail 3</div>
+                <h4>Novi proizvodi 2025</h4>
+                <p style="font-size: 0.85rem; color: #64748b;">Trajanje: 3:15</p>
+                <a href="#" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top: 0.5rem;">Gledaj</a>
+            </div>
+
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 4rem 2rem; color: #94a3b8;">
+        &copy; Platforma
+    </footer>
+
+</body>
+</html>
