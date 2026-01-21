@@ -1,0 +1,87 @@
+body{
+    font-family: sans-serif;
+
+}
+
+div.k{border: 1px solid black;
+padding: 20px;
+font-size: 2rem;
+text-align: center;
+}
+
+.container{
+    display: grid;
+    grid-template-areas: 
+    "a" 
+    "b"
+    "c"
+    "d";
+    gap: 2rem;
+}
+
+.a{grid-area: a;}
+.b{grid-area: b;}
+.c{grid-area: c;}
+.d{grid-area: d;}
+
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+li a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.4rem;
+}
+li{
+    text-align: center;
+    
+}
+
+
+/*Tablet*/
+@media (min-width: 450px){
+    body{
+        background-color: antiquewhite;
+    }
+}
+
+/*Tablet pejzažno*/
+@media(orientation: landscape) and (min-width:450px){
+    body{
+    background-color: blueviolet;
+    }
+    .container{
+        grid-template-areas: 
+        "a b"
+        "c d";
+    }
+}
+
+
+
+/*Prilagodba za desktop*/
+@media (orientation: portrait) and (min-width: 650px){
+    ul{
+        flex-direction: row;
+    }
+    body{
+        background-color: white;
+    }
+    .container{
+        grid-template-areas: 
+        "a b c d";
+    }
+}
+
+@media print{
+    nav{
+        display: none;
+    }
+
+}
