@@ -49,6 +49,10 @@ li{
     body{
         background-color: antiquewhite;
     }
+    .container{
+        grid-template-areas: 
+        "a b"
+        "c d";
 }
 
 /*Tablet pejzažno*/
@@ -56,17 +60,14 @@ li{
     body{
     background-color: blueviolet;
     }
-    .container{
-        grid-template-areas: 
-        "a b"
-        "c d";
+    
     }
 }
 
 
 
 /*Prilagodba za desktop*/
-@media (orientation: portrait) and (min-width: 650px){
+@media  (min-width: 650px){
     ul{
         flex-direction: row;
     }
