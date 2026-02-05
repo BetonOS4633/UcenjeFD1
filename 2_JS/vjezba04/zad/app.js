@@ -40,6 +40,79 @@ else {rezultat.innerHTML=z}
   return
 }
 
+//8. Za upisane pojmove A i B upiši ih jedno pored drugog
+if(zadatak==8){
+  if(!a||!b){
+    rezultat.innerHTML='Obavezno unijeti pojmove A i B'
+    return  
+  } 
+  rezultat.innerHTML=`${a} ${b}`
+  return
+}
+
+
+
+
+
+
+//7. Za uneseno ime grada u polju B ispiši da lije sjedište Edunove"
+if( zadatak==7){
+  if (!b){
+    rezultat.innerHTML='Obavezan unos grada pod vrijednost B'
+    return
+  }
+  if(b.toLowerCase ==='osijek') 
+    {rezultat.innerHTML=`${b} je sjedište Edunove`}
+  else{rezultat.innerHTML=`${b} nije sjedište Edunove`}
+    
+  return
+}
+
+
+
+//6. Za upisani broj  u D ispiši 10 puta veći broj
+if (zadatak==6){
+
+  const x=Number(d)
+  if(!x || x===0 ){
+    rezultat.innerHTML='D nije broj ili je nula'
+      return
+  }
+rezultat.innerHTML=x*10
+return
+}
+
+
+if(zadatak==5){
+  console.log('Rješavamo zadatak 5');
+  //Zbroj većih broje (A i B)+(C i D )
+    const x=Number(a)
+    const y=Number(b)
+    const z=Number(c)
+    const q=Number(d) 
+    if(!x||!y||!z||!q){ 
+      rezultat.innerHTML='Jedno od unosnih polja nije broj'
+    }
+      if (x>y&&z>q){rezultat.innerHTML=x+z}
+      else if(y>x&&z>q){rezultat.innerHTML=y+z}
+      else if(x>y&&q>z){rezultat.innerHTML=x+q}
+      else if(y>x&&q>z){rezultat.innerHTML=y+q}
+
+   return
+
+    // moje rješenje
+    //  if(x<y){g=x}else{g=y}
+    //  if(z<q){h=x:}else{h=y}
+    //  rezultat.innerHTML=g+h
+
+
+
+
+  }
+
+
+
+
 
   // Za svaki zadatak zahtijevamo određene ulaze
   if (zadatak === '1') {
