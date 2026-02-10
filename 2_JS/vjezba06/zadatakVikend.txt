@@ -1,0 +1,52 @@
+1. Kreirati html stranicu koja je uređena s CSS-om. Stranica ima dva unosna polja i gumb. Klikom na gumb u konzolu se ispisuju rješenja sljedećih zadataka:
+Pretpostavka zadatka: Vrijednosti u varijablama A i B (VELIKA SLOVA).
+=================================================
+   ZADATAK 1 — Prvi i zadnji element
+   - niz se gradi od  i B (plus dva fiksna elementa radi smisla)
+   Ulaz primjer: [A, 20, 30, B]
+   Izlaz: Prvi: A, Zadnji: B
+=================================================
+   ZADATAK 2 — Siguran pristup elementu
+   - indeks se računa iz B:
+     ako je B broj → index = B
+     inače → index = duljina stringa B
+   - niz je ["a", A, "c"]
+=================================================
+   ZADATAK 3 — Zamjena prva dva elementa
+   - niz: [A, B, 3]
+   - ako ima barem 2 elementa (ima), zamijeni prva dva
+=================================================
+   ZADATAK 4 — Dodavanje elementa prema duljini
+   - niz: [A, B]
+   - ako je A string i duljina(A) < 3 → dodaj "X" na kraj
+     inače → dodaj "Y" na početak
+=================================================
+   ZADATAK 5 — Provjera tipa prvog elementa
+   - prvi element je A
+   - switch prema typeof A
+=================================================
+   ZADATAK 6 — Ukloni zadnji element bez pop()
+   - niz: [A, B, "KRAJ"]
+   - ukloni zadnji preko length
+=================================================
+   ZADATAK 7 — Spoji dva niza bez concat()
+   - niz1: [A, 2]
+   - niz2: [B, 4]
+   - spajanje spreadom
+=================================================
+   ZADATAK 8 — Provjera rupe u nizu
+   - napravimo niz sa "rupom" na indeksu 1:
+     z8[0]=A, z8[2]=B
+   - provjerimo indeks 1
+=================================================
+   ZADATAK 9 — Razdvajanje prvog i ostatka
+   - niz: [A, B, 7, 6]
+   - destructuring [first, ...rest]
+=================================================
+   ZADATAK 10 — Switch prema duljini niza
+   - duljinu određujemo prema A i B:
+     Ako je A prazan string ili B prazan string → niz = []
+     Inače ako A === B → niz = [A]
+     Inače ako je B broj i B === 2 → niz = [A, B]
+     Inače → niz = [A, B, "x"]
+=================================================
