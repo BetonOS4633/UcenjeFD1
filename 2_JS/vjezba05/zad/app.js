@@ -28,9 +28,34 @@ document.getElementById('izvedi').addEventListener('click', () => {
     
     
       break
+<<<<<<< HEAD
 
     default:
       rezultat.innerHTML = `Nepoznati zadatak ${zadatak}`;
+=======
+    //Za unesene broj ispiši sve brojeve od 1 do tog broja odvojeno zarezomk
+    case '5':
+      const dobroja=Number(a);
+      if (!a){
+        rezultat.innerHTML='Niste unijeli broj';
+        return;
+      }
+      
+      let s='';
+
+      for(let i=1;i<=dobroja;i++){
+        console.log(i+',');
+      if(i===dobroja)s+=i;
+      else  s += i + ', ';
+    
+        }
+        rezultat.innerHTML=s;
+
+    break
+
+  default:
+    rezultat.innerHTML = `Nepoznati zadatak ${zadatak}`;
+>>>>>>> 4029f78c1ada5dbb1a63bff01584908e5ad2eaaf
   }
 
 });
