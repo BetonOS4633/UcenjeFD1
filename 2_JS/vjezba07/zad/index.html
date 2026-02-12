@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Predložak zadaci EDUNOVA frontend developer</title>
+    <link id="theme-link" rel="stylesheet" href="style.css" />
+    <!-- https://favicon.io/ -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="description" content="Vježbe za frontend developer: JavaScript algoritmi, provjera prostih brojeva, palindroma i manipulacija nizovima." />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Riješite interaktivne zadatke iz JavaScripta: od Armstrongovih brojeva do obrade teksta." />
+    <meta property="twitter:title" content="Edunova Frontend Zadaci" />
+    <meta property="twitter:description" content="Vježbe za frontend developere na jednom mjestu." />
+  </head>
+
+  <body>
+    <main class="container">
+      <header class="header">
+        <h1>Predložak zadaci EDUNOVA frontend developer</h1>
+        <h2>Otvoriti Developer tools (F12 ili desni klik pa Inspect - provjeri)</h2>
+        <p>Odaberite zadatak, unesi vrijednosti A ili B (ovisno o zadatku) i klikni <strong>Izvrši</strong>.</p>
+      </header>
+
+      <section class="card">
+
+         <div class="controls">
+          <label class="selectWrap">
+            <span>Odaberi zadatak</span>
+            <select id="zadatak">
+              <option value="1">1. Za uneseni cijeli broj u polje A veći od 2 i manji od 10M ispiši da li je prim (prosti) broj ili ne.</option>
+              <option selected="selected" value="2">2. Za uneseni cijeli broj u polje B veći od 2 i manji od 1000 ispiši da li je savršen broj ili ne.</option>
+              <option value="3">3. Za uneseni cijeli broj u polje B veći od 2 i manji od 100 ispiši da li je Armstrongov broj ili ne.</option>
+              <option value="4">4. Za unesenu riječ u polje A provjerite da li je palindrom ili ne</option>
+              <option value="5">5. Provjeri da li u nizu stopRijeci postoji riječ pronađena u polju B</option>
+              <option value="6">6. Za unesenu riječ u polju A ispiši koliko ima samoglasnika i koliko suglasnika</option>
+              <option value="7">7. Ispiši sve brojeve odvojeno znakom tab (\t) između A i B ili B i A. </option>
+            </select>
+          </label>
+
+          <button id="izvedi" class="btn" type="button">Izvrši</button>
+        </div>
+        <div>
+          <a target="_blank" href="#" id="poveznica">Pročitaj više o temi zadatka</a>
+        </div>
+
+        <div class="grid">
+          <label class="field">
+            <span>A</span>
+            <input id="a" type="text" />
+          </label>
+
+          <label class="field">
+            <span>B</span>
+            <input id="b" type="text" />
+          </label>
+        </div>
+
+       
+      </section>
+
+      <section class="resultCard">
+        <h2>Rezultat</h2>
+        <div id="rezultat" class="result" aria-live="polite">—</div>
+      </section>
+
+      <footer class="footer">
+        <small>Predložak zadaci EDUNOVA frontend developer</small>
+        <div id="theme-switcher-container" style="text-align: right; padding: 10px;"></div>
+      </footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
