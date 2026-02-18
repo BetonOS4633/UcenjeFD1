@@ -9,38 +9,134 @@ document.getElementById('izvedi').addEventListener('click', () => {
   switch (zadatak) {
     case '1':
       // rješavanje 1. zadatak
+
+
+      // 5 % 2 = 1 //5 cjelobrojno djeljeno s 2 daje 2, 2*2=4 i do 5 ostaje 1
+      // 5 % 3 = 2
+      // 5 % 4 = 1
+      // // 5 je prim broj
+
+      // 6 % 2 = 0
+      // 6 % 3 = 0
+      // 6 % 4 = 2
+      // 6 % 5 = 1
+
+
       // 1. Za uneseni cijeli broj u polje A veći od 2 i manji od 10M ispiši da li je prim (prosti) broj ili ne.
 
-        const a1= Number(a );
-        console.log(a1);
-        if(!a1){rezultat.innerHTML = `Niste unijeli broj`; return; }
-        if(a1<2||a1>10000000){rezultat.innerHTML = `Broj mora biti između 2 i 10 milijuna`; return; }
-      console.log(a1);
+      const a1 = Number(a)
+
+      if (!a1) {
+      rezultat.innerHTML = 'Uneseni podatak nije broj'
+      return;
+      }
+
+
+      if (a1 < 2 || a1 > 10000000) {
+      rezultat.innerHTML = 'Uneseni broj mora biti izmedju dva i deset milijuna'
+      return;
+      }
+
       let prim = true;
-      let sCime=0;
-      let brojac=0;
-      for(let i=2;i<=a1;i++){
-        if(brojac++ % 1000 === 0) {console.log(brojac, a1,i,'=', a1%i);}
+      let brojac = 1;
+      let cjelobrojDjeljiv=0;
+      for (let i = 2; i < a1; i++) {
+        if(brojac++ % 1000 === 0){ // svaki tisućiti ispiši
+          console.log(brojac, a1, '%', i, '=', a1 % i);
+        }
         
-        if(a1%i===0){ 
-          sCime=i;
-          prim=false;
-          //console.log(a1,'je djeljiv sa',i,);
+        if (a1 % i === 0) {
+          cjelobrojDjeljiv=i;
+          prim = false;
           break;
         }
       }
+      if (prim) {
+      rezultat.innerHTML = `${a1} je PRIM broj`
+      } else {
+      rezultat.innerHTML = `(${brojac}) ${a1} nije PRIM broj jer je cjelobrojno djeljiv s ${cjelobrojDjeljiv}`
+      }
 
-      if(prim){rezultat.innerHTML = `Broj ${a1} je prost.`; }
-      else{rezultat.innerHTML = `Broj ${a1} nije prost. Djeljiv je sa ${sCime}`; }
+      // 6 nije prim broj
 
 
 
-
-        // kraj rješavanje 1. zadatak
+      // kraj rješavanje 1. zadatak
     break;
     case '2':
       // rješavanje 2. zadatak
-      // 2. Za uneseni cijeli broj u polje A ispiši da li je savršen broj ili ne. Savršen broj je onaj koji je jednak zbroju svojih djelitelja (npr. 6=1+2+3, 28=1+2+4+7+14).
+
+      // 6 je savršen broj ZAŠTO
+      
+      // 6 % 1 = 0  uzimam 1
+      // 6 % 2 = 0, uzimam 2
+      // 6 % 3 = 0, uzimam 3
+      // 6 % 4 = 2, NE uzimam 4
+      // 6 % 5 = 1, NE uzimam 5 
+
+      // Zbrojim sve one koji uzimam (1+2+3) = 6
+      // ako je ulaz (6) jednako zbroj (6) radi se o savršenom broju
+
+      // 7 nije savršeni broj
+      // (7%1)=0 uzimam 1
+      // (7%2)=1
+      // (7%3)=1
+      // (7%4)=3
+      // (7%5)=2
+      // (7%6)=6
+      //   1     1!=7 - 7 nije savršen broj
+
+      // 28
+      // 1
+      // 28%2=0 uzimam 2
+      // 28%3=2
+      // 28%4=0 uzimam 4
+      // 28%5=3
+      // 28%6=4
+      // 28%7=0 uzimam 7
+      // 28%8=4
+      // 28%9=1
+      // 28%10=8
+      // 28%11=6
+      // 28%12=4
+      // 28%13=2
+      // 28%14=0 uzimam 14
+      // 28%15=13
+      // 28%16=12
+      // .... dalje
+      // 28%27 = 1
+      // 
+      //1 + 2 + 4 + 7 + 14 = 28, 28=28, 28 je savršeni broj
+
+        //2. Za uneseni cijeli broj u polje B veći od 2 i manji od 1000 ispiši da li je savršen broj ili ne.
+
+    const b1 = Number(b)
+
+      if (!b1) {
+      rezultat.innerHTML = 'Uneseni podatak nije broj'
+      return;
+      }
+
+
+      if (b1 < 2 || b1 > 1000) {
+      rezultat.innerHTML = 'Uneseni broj mora biti izmedju dva i tisuću'
+      return;
+      }
+      let suma=0;
+      for (let i=1; i<b1; i++){
+        if(b1%i===0){
+          suma += i;
+        }
+      }
+      if(suma===b1){
+        rezultat.innerHTML=`${b1} je savršen broj`
+      }
+      else{rezultat.innerHTML=`${b1} nije savršen broj`
+       }
+
+
+
+
 
 
 
@@ -76,9 +172,6 @@ document.getElementById('izvedi').addEventListener('click', () => {
     default:
       rezultat.innerHTML = `Nepoznati zadatak ${zadatak}`;
   }
-
-  
-  // ovo će se ispisati ako u HTML dodatke option za zadatak a ovdje ga ne obradite
 });
 const poveznica = document.getElementById('poveznica');
 poveznica.href='https://enciklopedija.hr/clanak/primbrojevi';
