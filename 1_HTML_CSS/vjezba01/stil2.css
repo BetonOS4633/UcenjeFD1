@@ -1,0 +1,40 @@
+body{
+    background-color: rgb(214, 151, 69);
+
+}
+h1
+{
+    color: #f0f;
+    text-align: center;
+}
+
+h2{ font-size: xx-large;
+    font-family: 'Courier New', Courier, monospace;
+    color: aquamarine;
+    text-decoration: dashed;
+    text-rendering: geometricPrecision;
+
+}
+
+.linija{   border: 0;
+    height: 5px;
+    background-color: #ff5722;
+    border-radius: 2px;
+}
+
+#sadrzaj p{
+    font-family: sans-serif;
+    color: blue;
+}
+
+ul{
+    list-style: none;
+}
+
+ul li::before{
+    content: '👋';
+}
+
+ol{
+    list-style-type: upper-roman;
+}
