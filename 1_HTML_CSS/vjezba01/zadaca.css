@@ -1,0 +1,76 @@
+body {
+    background-color: #f4f7f6;
+    font-family: Arial, sans-serif; /* Primjer fonta */
+    padding: 50px;
+    color: #333;
+}
+
+h1 {
+    color: #003366;
+    font-size: 32px;
+    text-transform: uppercase;
+}
+
+h2 {
+    color: #e74c3c;
+    font-style: italic;
+    
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.font-info {
+    color: #e31b1b;
+    
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 800px;
+    line-height: 1.6;
+    
+}
+
+u{
+    text-decoration: underline;
+    text-decoration-color: red;
+    text-decoration-thickness: 2px;
+}
+
+code {
+    background-color: #f0f0f0;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+mark {
+    background-color: yellow;
+}
+
+.dekoracija {
+    font-size: 24px;
+}
+
+.a {
+    color: #FF6600;
+    text-decoration: underline;
+}
+
+.comment {
+    text-align: left;
+    color: #888;
+    margin-top: 40px;
+    font-family: monospace;
+}
+
+ul{
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+ul li::before{
+    content:'✅';
+}

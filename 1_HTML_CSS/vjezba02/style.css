@@ -13,11 +13,11 @@ body{
     background-attachment: fixed;
 }
 .container{
-width: 70%;
-max-height: 1000px;
+width: 90%;
+max-height: 960px;
 min-width: 300px;
-inline-size: 60%;
-max-block-size: 1000px;
+inline-size: 90%;
+max-inline-size: 1000;
 
 min-height: 100vh;
 min-block-size: 100vh;
