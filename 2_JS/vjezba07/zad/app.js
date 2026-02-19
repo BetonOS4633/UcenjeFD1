@@ -54,6 +54,25 @@ document.getElementById('izvedi').addEventListener('click', () => {
     break;
     case '4':
       // rješavanje 4. zadatak
+        //4. Za unesenu riječ u polje A provjerite da li je palindrom ili ne
+        //  Ružan edo na žur
+
+        let s='';
+        //debugger;
+        for (let i=0;i<a.length;i++){
+            if(a[i]!=' '){
+              s+=a[i].toLowerCase();
+                        
+            }
+          
+
+        }
+         console.log('s=',s);
+
+        
+
+
+
 
       // kraj rješavanje 4. zadatak
     break;
