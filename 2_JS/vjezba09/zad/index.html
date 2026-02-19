@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Predložak zadaci EDUNOVA frontend developer</title>
+    <link id="theme-link" rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="description" content="Vježbe za frontend developer: JavaScript algoritmi, provjera prostih brojeva, palindroma i manipulacija nizovima." />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Riješite interaktivne zadatke iz JavaScripta: od Armstrongovih brojeva do obrade teksta." />
+    <meta property="twitter:title" content="Edunova Frontend Zadaci" />
+    <meta property="twitter:description" content="Vježbe za frontend developere na jednom mjestu." />
+  </head>
+
+  <body>
+    <main class="container">
+      <header class="header">
+        <h1>Predložak zadaci EDUNOVA frontend developer</h1>
+        <h2>Otvoriti Developer tools (F12 ili desni klik pa Inspect - provjeri)</h2>
+        <p>Odaberite zadatak, unesi vrijednosti A ili B (ovisno o zadatku) i klikni <strong>Izvrši</strong>.</p>
+      </header>
+
+      <section class="card">
+
+         <div class="controls">
+          <label class="selectWrap">
+            <span>Odaberi zadatak</span>
+            <select id="zadatak">
+              <option value="1">1. Ispiši apsolutnu vrijednost razlike brojava A i B.</option>
+              <option value="2">2. Ispiši veći broj od dva unesena cijela broja A i B.</option>
+              <option value="3">3. U rezultatu napravi onoliko div elemenata koliko je uneseno u polje A te svaki drugi div ima boju pozadine definiranu u polju B.</option>
+              <option value="4">4. Ako ostane polje A i B prazno u rezultat upišite dva emojia po vlastitom izboru</option>
+              <option value="5">5. Osmislite zadatak sami i realizirajte ga</option>
+            </select>
+          </label>
+
+          <button id="izvedi" class="btn" type="button">Izvrši</button>
+        </div>
+
+        <div class="grid">
+          <label class="field">
+            <span>A</span>
+            <input id="a" type="text" />
+          </label>
+
+          <label class="field">
+            <span>B</span>
+            <input id="b" type="text" />
+          </label>
+        </div>
+
+       
+      </section>
+
+      <section class="resultCard">
+        <h2>Rezultat</h2>
+        <div id="rezultat" class="result" aria-live="polite">—</div>
+      </section>
+
+      <footer class="footer">
+        <small>Predložak zadaci EDUNOVA frontend developer</small>
+        <div id="theme-switcher-container" style="text-align: right; padding: 10px;"></div>
+      </footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
