@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS ES6 Kviz</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <div class="container spremnik-kviza">
+        <div class="card p-4">
+
+
+            <div id="podrucje-kviza">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 style="font-family: serif;" class="text-primary mb-0">JS ES6 Kviz</h4>
+                    <span id="brojac-pitanja" class="badge bg-secondary">Pitanje 1/5</span>
+                </div>
+                <div class="progress">
+                    <div id="traka-napretka" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%"></div>
+                </div>
+                <h5 id="tekst-pitanja" class="mb-4 mt-2">Učitavanje pitanja...</h5>
+                <hr>
+                <div id="popis-odgovora" class="d-grid gap-2"></div>
+            </div>
+            <div id="podrucje-rezultata" class="text-center">
+                <h2 class="mb-3">Kraj kruga!</h2>
+                <div class="display-1 fw-bold text-primary mb-3" id="konacni-rezultat">0/5</div>
+                <h3 id="tekst-ocjene" class="mb-4">Ocjena: -</h3>
+                <button class="btn btn-lg btn-success w-100" onclick="pokreniKrug()">Pokreni novi krug (novih 5 pitanja)</button>
+            </div>
+        
+        </div>
+    <h6
+    class="text-center text-muted"> &copy;Edunova 2026</h6>
+    </div>
+
+    <script src="js/pitanja.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
