@@ -11,7 +11,7 @@
 <body>
     <table>
         <caption>Naslov tablice</caption>
-            <colgroup>
+        <colgroup>
             <col style="width: 30%;">
             <col style="width: 50%;">
             <col style="width: 20%;">
@@ -22,9 +22,11 @@
                     Godina
                 </th>
                 <th>
-                Ime boje
+                    Ime boje
                 </th>
-                <th>HEX</th>
+                <th>
+                    HEX
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -46,14 +48,15 @@
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="2">1</td>
-                <td rowspan="2">3</td>
-            
+                <td colspan="2">ukupno</td> ///merge coloum
+                
+                <td rowspan="2">3</td> //merge row
+
             </tr>
             <tr>
                 <td>1</td>
                 <td>2</td>
-                
+
             </tr>
         </tfoot>
     </table>
@@ -61,16 +64,16 @@
     <form action="https://origo.hr" method="get">
         <fieldset>
             <legend>Osobni podaci</legend>
-            <input type="text"name="ime">
+            <input type="text" name="ime">
 
             <hr>
-            
+
             <label for="mjesto">Gdje živite?</label>
-            <input type="text" id="mjesto" placeholder="Gdje živite?">
+            <input type="text" id="mjesto" placeholder="Gdje živite sad?">
 
             <hr>
 
-            <input type="password" name="" id="">
+            <input type="password" name="password" id="passwo">
 
             <hr>
 
@@ -87,7 +90,13 @@
 
             <label for="c2">Opcija a</label>
             <input type="checkbox" name="c[]" id="c2">
+
+            <hr>
+
+            <label for="e">Email:</label>
+            <input type="email" name="email" id="e">
             
+            <hr>
 
             <button>Predaj</button>
         </fieldset>
