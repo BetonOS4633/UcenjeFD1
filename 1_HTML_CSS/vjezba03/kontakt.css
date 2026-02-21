@@ -1,0 +1,31 @@
+.container{
+    display: grid;
+    grid-template-areas: 
+    "a a a"
+    "b b b"
+    "c c e"
+    "d d e"
+    "f f f";
+    row-gap: 1rem;
+    column-gap: 1rem;
+}
+
+.a{grid-area: a;}
+.b{grid-area: b;}
+.c{grid-area: c;}
+.d{grid-area: d;}
+.e{grid-area: e;}
+.f{grid-area: f;}
+
+div{
+    border: none;
+}
+
+.podrucje{
+    border: 2px solid blue;
+    min-height: 30px;
+}
+
+.podrucje2{
+    background-color: aqua;
+}
