@@ -1,11 +1,9 @@
 body{
     background-color: gainsboro;
-    font-family: Arial, Helvetica, sans-serif;
-
+    font-family: sans-serif;
 }
-    
-.container{
-    border: 1px solid red;
+    .container{
+    /* border: 1px solid red; */
     max-width: 960px;
     margin: auto;
 }
@@ -27,24 +25,25 @@ form{
     display: flex;
     flex-direction: column;
 }
+
 label{
     font-weight: bold;
     color: #3e3d3d;
-    margin-bottom: 5px
 }
 
 input[type="text"],
 input[type="email"],
-   select{ 
+select{ 
     font-size: 1.1rem   ;
     border: 1px solid gray;
     border-radius: 3px;
-    padding: 8px;}
+    padding: 8px;
+}
 
 h1{ font-size: 1.6rem;
-        border-bottom: 2px solid blue;
-        max-width: 165px;
-        padding-bottom 10px: 
+    border-bottom: 2px solid blue;
+    max-width: 165px;
+    padding-bottom: 10px;
 }
 
 input[type="submit"]{
