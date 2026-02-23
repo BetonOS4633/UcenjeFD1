@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postavljanje poslužitelja 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<div class="glavni-kontejner">
+    <h2>🛠️ Konfiguracija Sustava</h2>
+    <div id="ispis-pogreske"></div>
+    <form id="obrazac-podataka">
+        
+        <div class="grupa-unosa">
+            <label for="naziv-projekta">Naziv Projekta (String)</label>
+            <input type="text" id="naziv-projekta" placeholder="npr. Edunova-2026">
+        </div>
+
+        <div class="grupa-unosa">
+            <label for="broj-instanci">Broj Instanci (Int)</label>
+            <input type="number" id="broj-instanci" placeholder="Raspon: 1 - 10">
+        </div>
+
+        <div class="grupa-unosa">
+            <label for="snaga-procesora">Snaga Procesora (Float - GHz)</label>
+            <input type="number" step="0.1" id="snaga-procesora" placeholder="npr. 3.2">
+        </div>
+
+        <div class="grupa-unosa">
+            <label for="datum-pokretanja">Datum Pokretanja</label>
+            <input type="date" id="datum-pokretanja">
+        </div>
+
+        <div class="grupa-unosa">
+            <label for="oznake-sustava">Oznake Sustava (Array - zarez kao razmak)</label>
+            <input type="text" id="oznake-sustava" placeholder="cloud, docker, auth">
+        </div>
+
+        <div class="grupa-unosa">
+            <label for="datoteka-postavki">Konfiguracijska Datoteka (File)</label>
+            <input type="file" id="datoteka-postavki">
+        </div>
+
+        <div class="grupa-unosa provjera-okvir">
+            <input type="checkbox" id="potvrda-uvjeta">
+            <label for="potvrda-uvjeta">Prihvaćam uvjete korištenja sustava (Bool)</label>
+        </div>
+
+        <button type="submit" class="gumb-potvrde">Spremi Konfiguraciju</button>
+        
+    </form>
+</div>
+<script src="funkcije.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
