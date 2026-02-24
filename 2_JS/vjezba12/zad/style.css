@@ -1,0 +1,131 @@
+:root {
+    --primarna-boja: #3498db;
+    --pozadina-boja: #f4f7f6;
+    --tekst-boja: #333;
+    --obrub-boja: #ddd;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--pozadina-boja);
+    color: var(--tekst-boja);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.glavni-kontejner {
+    width: 90%;
+    max-width: 1000px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.zaglavlje-sekcija {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.sucelje-kontrole {
+    margin-bottom: 0; 
+}
+
+.zaglavlje-sekcija h1 {
+    margin: 0;
+}
+
+.sucelje-kontrole {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+input[type="text"] {
+    padding: 8px;
+    width: 250px;
+    border: 1px solid var(--obrub-boja);
+    border-radius: 4px;
+}
+
+.tablica-podataka {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.tablica-podataka th, .tablica-podataka td {
+    padding: 12px;
+    border-bottom: 1px solid var(--obrub-boja);
+}
+
+.tablica-podataka th {
+    background-color: #f8f9fa;
+    cursor: pointer;
+    user-select: none;
+}
+
+.tablica-podataka th:hover { background-color: #ececec; }
+
+.stranicenje {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.gumb-stranica {
+    padding: 8px 12px;
+    border: 1px solid var(--primarna-boja);
+    background: white;
+    color: var(--primarna-boja);
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.gumb-stranica.aktivna-stranica {
+    background: var(--primarna-boja);
+    color: white;
+}
+
+.statisticki-pregled {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #666;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    line-height: 1.6;
+}
+
+
+.tablica-podataka th {
+    background-color: #f8f9fa;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    position: relative;
+    transition: background 0.2s;
+}
+
+.tablica-podataka th:hover {
+    background-color: #e9ecef;
+}
+
+.tablica-podataka th span {
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 0.85em;
+    color: #aaa; 
+    transition: transform 0.2s, color 0.2s;
+}
+
+.tablica-podataka th.aktivno-sortiranje span {
+    color: var(--primarna-boja);
+    font-weight: bold;
+}

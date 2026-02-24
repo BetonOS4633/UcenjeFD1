@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evidencija polaznika</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+<div class="glavni-kontejner">
+    <div class="zaglavlje-sekcija">
+        <h2>Evidencija Polaznika</h2>
+        <div class="sucelje-kontrole">
+            <input type="text" id="poljePretraga" placeholder="Pretraži po imenu ili prezimenu...">
+        </div>
+    </div>
+    <table class="tablica-podataka">
+        <thead>
+            <tr>
+                <th onclick="poredajPodatke('id')">ID <span>↕</span></th>
+                <th onclick="poredajPodatke('ime')">Ime <span>↕</span></th>
+                <th onclick="poredajPodatke('prezime')">Prezime <span>↕</span></th>
+                <th onclick="poredajPodatke('datumUpisa')">Datum upisa <span>↕</span></th>
+                <th onclick="poredajPodatke('bodovi')">Bodovi <span>↕</span></th>
+                <th onclick="poredajPodatke('placeno')">Status <span>↕</span></th>
+            </tr>
+        </thead>
+        <tbody id="tijeloTablice"></tbody>
+    </table>
+    <div class="stranicenje" id="kontejnerStranica"></div>
+    <div class="statisticki-pregled" id="statistickiIspis"></div>
+</div>
+<script src="podaci.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
