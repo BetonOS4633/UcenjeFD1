@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Rad s mikrofonom</title>
+</head>
+<body>
+    <div class="recorder-card">
+        <div id="status" class="status-badge">Spreman za rad</div>
+        <h2>Audio Recorder</h2>
+
+        <div class="visualizer-container">
+            <div id="volumeBar"></div>
+        </div>
+
+        <div class="controls">
+            <button id="start">● Snimaj</button>
+            <button id="stop" disabled>■ Zaustavi</button>
+            <button id="download" disabled>↓ Spremi na računalo</button>
+        </div>
+
+        <audio id="audioPlayback" controls></audio>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
