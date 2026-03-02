@@ -1,0 +1,143 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/inter-v12-latin-ext-regular.woff2') format('woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/inter-v12-latin-ext-600.woff2') format('woff2');
+    font-weight: 600;
+}
+
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --primary: #8b5cf6;
+    --secondary: #3b82f6;
+    --accent: #ef4444; /* Crvena za snimanje */
+    --text: #f8fafc;
+    --muted: #64748b;
+    --guide-color: rgba(0, 255, 255, 0.7);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.studio-container {
+    background: var(--card);
+    padding: 2rem;
+    border-radius: 24px;
+    width: 95%;
+    max-width: 1100px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header { text-align: center; margin-bottom: 2rem; }
+
+.studio-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.panel { display: flex; flex-direction: column; gap: 1rem; }
+.panel-label { font-size: 0.75rem; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+
+.viewfinder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: #000;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+video { width: 100%; height: 100%; object-fit: cover; }
+#videoPlayback { display: none; }
+#placeholderText { color: var(--muted); position: absolute; }
+
+/* T-VODIČ DIZAJN */
+.t-guide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+}
+
+.t-horizontal {
+    position: absolute;
+    top: 30%;
+    width: 45%;
+    height: 2px;
+    background: var(--guide-color);
+    box-shadow: 0 0 10px var(--guide-color);
+}
+
+.t-vertical {
+    position: absolute;
+    top: 30%;
+    width: 2px;
+    height: 50%;
+    background: var(--guide-color);
+    box-shadow: 0 0 10px var(--guide-color);
+}
+
+.t-dot {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #fff;
+}
+
+.controls { display: flex; gap: 8px; }
+
+button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    color: white;
+}
+
+.btn-primary { background: var(--primary); }
+.btn-accent { background: var(--accent); }
+.btn-stop { background: #475569; }
+.btn-secondary { background: var(--secondary); }
+
+button:disabled { opacity: 0.2; cursor: not-allowed; }
+
+.recording-now {
+    animation: pulse 1.5s infinite;
+    color: var(--accent) !important;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+@media (max-width: 850px) { .studio-layout { grid-template-columns: 1fr; } }

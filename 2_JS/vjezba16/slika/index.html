@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slikanje</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="studio-container">
+        <header>
+            <div id="status" class="status-badge">Sustav spreman</div>
+            <h2>Slikanje</h2>
+        </header>
+
+        <main class="studio-layout">
+            <section class="panel">
+                <div class="panel-label">Kamera Uživo</div>
+                <div class="viewfinder">
+                    <video id="video" autoplay playsinline></video>
+                    <div class="t-guide">
+                        <div class="t-horizontal"></div>
+                        <div class="t-vertical"></div>
+                        <div class="t-instruction">Čelo na sjecište • Širina glave uz liniju</div>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button id="startCam" class="btn-primary">🎥 Pokreni kameru</button>
+                    <button id="capture" class="btn-accent" disabled>📸 Uslikaj kadar</button>
+                </div>
+            </section>
+
+            <section class="panel">
+                <div class="panel-label">Posljednja Snimka</div>
+                <div class="viewfinder preview-bg">
+                    <img id="photoPreview" alt="Preview će se pojaviti ovdje">
+                    <div id="placeholderText">Ovdje će se pojaviti vaša slika</div>
+                </div>
+                <div class="controls">
+                    <button id="download" class="btn-secondary" disabled>↓ Spremi sliku</button>
+                </div>
+            </section>
+        </main>
+
+        <canvas id="canvas" style="display:none;"></canvas>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
