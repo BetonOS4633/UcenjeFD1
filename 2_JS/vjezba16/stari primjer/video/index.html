@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snimanje videa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="studio-container">
+        <header>
+            <div id="status" class="status-badge">Sustav spreman</div>
+            <h2>Snimanje videa</h2>
+        </header>
+
+        <main class="studio-layout">
+            <section class="panel">
+                <div class="panel-label">Snimanje uživo</div>
+                <div class="viewfinder">
+                    <video id="videoLive" autoplay playsinline muted></video>
+                    
+                    <div class="t-guide">
+                        <div class="t-horizontal"></div>
+                        <div class="t-vertical"></div>
+                        <div class="t-dot"></div>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button id="startCam" class="btn-primary">🎥 Kamera</button>
+                    <button id="startRecord" class="btn-accent" disabled>● Snimaj</button>
+                    <button id="stopRecord" class="btn-stop" disabled>■ Zaustavi</button>
+                </div>
+            </section>
+
+            <section class="panel">
+                <div class="panel-label">Posljednja snimka</div>
+                <div class="viewfinder preview-bg">
+                    <video id="videoPlayback" controls></video>
+                    <div id="placeholderText">Ovdje će se pojaviti video</div>
+                </div>
+                <div class="controls">
+                    <button id="download" class="btn-secondary" disabled>↓ Spremi video</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

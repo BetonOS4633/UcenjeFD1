@@ -1,0 +1,19 @@
+U direktoriju 2_JS\vjezba16\EdunovaPolaznici pripremio sam poddirektorije za mrežnu stranicu na kojoj bih predstavio polaznike škole Edunova na smjeru Frontend devloper. Slike se nalaze u direktoriju img. Napravi index.html koji u sebi ima moderni izgled popisa polaznika, pripremi mi područje za ime i prezime. Sav css stavi u css direktorij, js stavi u js direktorij. Stranica mora biti moderna na principu kartica polaznika ali mora imati i mogućnost galerije kada se klikne na jednu od slika. Dizajn neka bude moderan sukladno trendovima u 2026.
+
+
+
+Trenutno na stranici se nalazi popis fiksno a ti napravi JS datoteku koja u json formatu ima uz ime i prezime još i github URL. Prvo ti je prezime pa ime pa url:
+Geić	Vladimir	https://github.com/vladogeic	
+Gergelj	Rudolf	https://github.com/BetonOS4633	
+Hlavati	Luka	https://github.com/lhlavati	
+Kralj	Tankred	https://github.com/Tankred031	
+Liović	Fran	https://github.com/Liovic031	
+Marković	Robert	https://github.com/RobertMarkovic710	
+Mitrić	Hrvoje	https://github.com/hrki1971	
+Perković	Roberto	https://github.com/rperkovi	
+Šnalcer	Maja	https://github.com/snalcermaja	
+Tandara	Alen	https://github.com/alentandara	
+Tilhof	Vincent Edward	https://github.com/EdwardTilhof	
+Jakopec	Tomislav	https://github.com/tjakopec/EdunovaFD1	
+
+Na ime i prezime na stranici i na modali napravi kada se klikne da se u novoj kartici otvori github URL 

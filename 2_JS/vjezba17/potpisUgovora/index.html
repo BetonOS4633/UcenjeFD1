@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ugovor i Digitalni Potpis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container" id="printable">
+    <h1>Ugovor o pružanju usluga</h1>
+    
+    <div class="contract-text">
+        <p><strong>Članak 1.</strong> Pružatelj usluga obvezuje se izvršiti zadatak u skladu s uputama naručitelja.</p>
+        <p><strong>Članak 2.</strong> Naručitelj se obvezuje platiti ugovoreni iznos odmah nakon generiranja ovog PDF dokumenta.</p>
+        <p><strong>Članak 3.</strong> Ovaj potpis služi kao dokaz prihvaćanja svih uvjeta navedenih u tekstu iznad.</p>
+        <p style="margin-top: 50px;">U Osijeku, dana: <span id="current-date"></span></p>
+    </div>
+
+    <div class="signature-section">
+        <p>Potpis naručitelja:</p>
+        <div class="canvas-container">
+            <canvas id="signature-pad" width="300" height="150"></canvas>
+        </div>
+        <p id="status" style="font-size: 12px; color: #7f8c8d;">Potpisano: 0%</p>
+    </div>
+
+    <div class="controls">
+        <button id="clear-btn">Očisti potpis</button>
+        <button id="print-btn">Ispiši u PDF</button>
+    </div>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>

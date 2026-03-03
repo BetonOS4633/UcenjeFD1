@@ -1,0 +1,183 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/inter-v12-latin-ext-regular.woff2') format('woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/inter-v12-latin-ext-600.woff2') format('woff2');
+    font-weight: 600;
+}
+
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --primary: #8b5cf6;
+    --secondary: #3b82f6;
+    --accent: #ec4899;
+    --text: #f8fafc;
+    --muted: #64748b;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.studio-container {
+    background: var(--card);
+    padding: 2rem;
+    border-radius: 24px;
+    width: 95%;
+    max-width: 1000px; /* Širi kontejner za dvije kolone */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header { text-align: center; margin-bottom: 2rem; }
+
+/* DVIJE KOLONE */
+.studio-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.panel-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.viewfinder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: #000;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+.preview-bg { background: #0a0f1d; display: flex; align-items: center; justify-content: center; }
+
+video, img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#photoPreview { display: none; }
+#placeholderText { color: var(--muted); font-size: 0.9rem; padding: 20px; text-align: center; }
+
+.controls { display: flex; gap: 10px; flex-wrap: wrap; }
+
+button {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.9rem;
+    color: white;
+}
+
+.btn-primary { background: var(--primary); }
+.btn-secondary { background: var(--secondary); }
+.btn-accent { background: var(--accent); }
+
+button:hover:not(:disabled) { filter: brightness(1.2); transform: translateY(-2px); }
+button:disabled { opacity: 0.2; cursor: not-allowed; }
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 0.5rem;
+}
+
+
+/* Kontejner vodiča */
+.t-guide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Da ne smeta klikovima na video */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Horizontalna linija (definira širinu glave i poziciju čela) */
+.t-horizontal {
+    position: absolute;
+    top: 30%; /* Pozicija čela */
+    width: 45%; /* Širina glave */
+    height: 2px;
+    background-color: rgba(0, 255, 255, 0.6); /* Cyan boja za vidljivost */
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
+}
+
+/* Vertikalna linija (definira centar i kraj vrata) */
+.t-vertical {
+    position: absolute;
+    top: 30%; /* Počinje od čela */
+    width: 2px;
+    height: 50%; /* Proteže se do kraja vrata */
+    background-color: rgba(0, 255, 255, 0.6);
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
+}
+
+/* Mala uputa unutar vizira */
+.t-instruction {
+    position: absolute;
+    bottom: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    color: #00ffff;
+    text-transform: uppercase;
+}
+
+/* Točka na sjecištu za preciznije ciljanje */
+.t-guide::after {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #fff;
+}
+
+/* Prilagodba za mobitele */
+@media (max-width: 768px) {
+    .studio-layout { grid-template-columns: 1fr; }
+}
+
+

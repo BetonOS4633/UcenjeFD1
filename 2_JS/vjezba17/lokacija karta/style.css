@@ -1,0 +1,32 @@
+body {
+    font-family: sans-serif;
+    padding: 20px;
+    background: #f4f4f9;
+}
+
+#info {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#karta {
+    height: 500px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.label {
+    font-weight: bold;
+}
+/* stiliziranje markera */
+gmp-advanced-marker {
+    cursor: pointer;
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+}
+/* sakrij zatvarenj info prozora */
+.gm-ui-hover-effect {
+    display: none !important;
+}
