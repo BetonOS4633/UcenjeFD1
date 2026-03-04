@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation & jQuery Kviz</title>
+    <link rel="stylesheet" href="css/foundation-6.9.0.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <div class="grid-container spremnik-kviza">
+        <div class="callout secondary shadow-lg p-4">
+            
+            <div id="podrucje-kviza">
+                <div class="flex-container align-justify align-middle mb-1">
+                    <h4 class="text-primary">JS ES6 Kviz</h4>
+                    <span id="brojac-pitanja" class="label secondary">Pitanje 1/5</span>
+                </div>
+
+                <div class="progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                    <div id="traka-napretka" class="progress-meter" style="width: 0%"></div>
+                </div>
+
+                <h5 id="tekst-pitanja" class="margin-bottom-1">Učitavanje pitanja...</h5>
+                <div id="popis-odgovora" class="stacked-button-group">
+                    </div>
+            </div>
+
+            <div id="podrucje-rezultata" style="display:none;" class="text-center">
+                <h2>Kraj kruga!</h2>
+                <div class="stat-iznos" id="konacni-rezultat">0/5</div>
+                <h4 id="tekst-ocjene"></h4>
+                <button id="restart-btn" class="button success large expanded">Pokreni novi krug</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <script src="js/pitanja.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
