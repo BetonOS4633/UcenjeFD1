@@ -1,0 +1,134 @@
+/* --- CSS VARIJABLE (TEMA 2026) --- */
+:root {
+    --bg-color: #05070a;
+    --card-bg: rgba(15, 23, 42, 0.6);
+    --accent-primary: #00d4ff;
+    --accent-secondary: #7000ff;
+    --text-main: #e2e8f0;
+    --text-dim: #94a3b8;
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --code-bg: #000000;
+}
+
+/* --- OSNOVNI STILOVI --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- LAYOUT --- */
+.app-container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 100vh;
+}
+
+/* --- SIDEBAR --- */
+aside {
+    background: rgba(10, 10, 15, 0.95);
+    border-right: 1px solid var(--glass-border);
+    padding: 2rem;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 2rem;
+}
+
+nav ul { list-style: none; }
+nav li { margin-bottom: 0.5rem; }
+nav a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+nav a:hover { color: var(--accent-primary); padding-left: 5px; }
+
+/* --- GLAVNI SADRŽAJ --- */
+main { padding: 4rem; max-width: 1200px; margin: 0 auto; }
+
+.section-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin-bottom: 4rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+h2 { font-size: 2.2rem; margin-bottom: 1rem; color: #fff; }
+p { color: var(--text-dim); margin-bottom: 1.5rem; }
+
+/* --- KOD I DEMO --- */
+.grid-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.code-box {
+    background: var(--code-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    font-family: 'Consolas', monospace;
+    font-size: 0.85rem;
+    border: 1px solid #333;
+    color: #50fa7b;
+    overflow-x: auto;
+}
+
+.demo-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px dashed var(--accent-primary);
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* --- VUE SPECIFIČNI ELEMENTI --- */
+button {
+    background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+button:hover { transform: scale(1.05); }
+
+input {
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: white;
+    padding: 0.8rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* Tranzicije */
+.fade-enter-active, .fade-leave-active { transition: opacity 0.5s ease; }
+.fade-enter-from, .fade-leave-to { opacity: 0; }
+
+@media (max-width: 1024px) {
+    .app-container { grid-template-columns: 1fr; }
+    aside { display: none; }
+    .grid-split { grid-template-columns: 1fr; }
+}

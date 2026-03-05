@@ -33,8 +33,9 @@
     // Ovo je "best practice" u jQueryju za dinamičke elemente
     $('#popis-odgovora').on('click', '.gumb-odgovor', function() {
         const odabrano = $(this).data('odgovor');
-        // tu se trebalo promjeniti iz === u ===
-        if (odabrano == trenutnaPitanja[indeksPitanja].tocno) {
+        // tu se trebalo promjeniti odabrano.toString() jer data atribut vraća string, 
+        // a tocno je broj, ali to je već riješeno u zadatku 19, pa ostavljam ovako da se vidi razlika
+        if (odabrano.toString() === trenutnaPitanja[indeksPitanja].tocno) {
             rezultat++;
             $(this).addClass('success'); // Brza vizualna povratna informacija
         } else {

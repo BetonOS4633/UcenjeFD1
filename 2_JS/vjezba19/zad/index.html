@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJS Kviz</title>
+    <link rel="stylesheet" href="css/app.css">
+    
+</head>
+<body>
+    <div id="app" v-cloak>
+        <div class="spremnik-kviza">
+            <div class="kartica">
+                <div v-if="!pokaziRezultate">
+                    <div class="zaglavlje">
+                        <h4 class="naslov">JS ES6 Kviz</h4>
+                        <span class="znacka">Pitanje {{ indeks + 1 }}/{{ brojPitanja }}</span>
+                    </div>
+
+                    <div class="progres-okvir">
+                        <div class="progres-traka" :style="{ width: progres + '%' }"></div>
+                    </div>
+
+                    <h5 class="pitanje-tekst">{{ trenutnoPitanje.pitanje }}</h5>
+
+                    <div class="popis-odgovora">
+                        <button 
+                            v-for="odgovor in trenutnoPitanje.odgovori" 
+                            :key="odgovor"
+                            class="gumb-odgovor"
+                            @click="obradiOdgovor(odgovor)"
+                        >
+                            {{ odgovor }}
+                        </button>
+                    </div>
+                </div>
+
+                <div v-else class="tekst-centar">
+                    <h2 class="mb-3">Kraj kruga!</h2>
+                    <div class="veliki-rezultat">{{ rezultat }}/{{ brojPitanja }}</div>
+                    <h3 class="ocjena-tekst">{{ izracunajOcjenu }}</h3>
+                    <button class="gumb-akcija" @click="pokreniKrug">
+                        Pokreni novi krug (novih {{ brojPitanja }} pitanja)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/vue-3.5.29.js"></script>
+    <script src="js/pitanja.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

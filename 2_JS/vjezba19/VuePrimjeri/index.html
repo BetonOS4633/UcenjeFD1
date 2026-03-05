@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js 3 PRIMJERI</title>
+    <script src="vue-3.5.29.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="app" class="app-container">
+        <aside>
+            <div class="logo">VUE 3 PRIMJERI</div>
+            <nav>
+                <ul>
+                    <li v-for="link in navLinks" :key="link.id">
+                        <a :href="'#' + link.id">{{ link.text }}</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <header style="margin-bottom: 5rem;">
+                <h1 style="font-size: 4rem; font-weight: 900;">Budućnost <span
+                        style="color: var(--accent-primary)">Vue.js</span></h1>
+                <p style="font-size: 1.2rem;">Sveobuhvatan vodič kroz Composition API i napredne koncepte.</p>
+            </header>
+
+            <section id="basics" class="section-card">
+                <h2>1. Instanca i Sintaksa Predloška</h2>
+                <p>Osnova svake Vue aplikacije je reaktivnost. Koristimo <code>ref</code> i <code>reactive</code> za
+                    definiranje stanja.</p>
+                <div class="grid-split">
+                    <pre class="code-box" v-pre><code>// Sintaksa 2026
+                        const poruka = ref('Pozdrav!');
+                        <h1>{{ poruka }}</h1></code>
+                    </pre>
+                    <div class="demo-box">
+                        <input v-model="message" placeholder="Upiši nešto...">
+                        <p>Rezultat: <strong>{{ message }}</strong></p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="computed" class="section-card">
+                <h2>2. Computed Properties & Watchers</h2>
+                <p>Computed svojstva su keširana, dok Watchers reagiraju na promjene podataka (npr. poziv API-ja).</p>
+                <div class="grid-split">
+                    <pre class="code-box"><code>const dupliBroj = computed(() => 
+  broj.value * 2
+);</code></pre>
+                    <div class="demo-box">
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <button @click="count++">Dodaj ({{ count }})</button>
+                            <span>X 2 = {{ doubleCount }}</span>
+                        </div>
+                        <p style="font-size: 0.8rem; margin-top: 10px;">{{ watchLogs }}</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="components" class="section-card">
+                <h2>3. Komponente (Props & Events)</h2>
+                <p>Komunikacija ide prema dolje putem <code>props</code>, a prema gore putem <code>emits</code>.</p>
+                <div class="grid-split">
+                    <pre class="code-box"><code>&lt;MojaKomponenta 
+  :naslov="info" 
+  @akcija="handle" 
+/&gt;</code></pre>
+                    <div class="demo-box">
+                        <custom-button title="Klikni me (Komponenta)" @custom-click="alertClick">
+                        </custom-button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="slots" class="section-card">
+                <h2>4. Slotovi i Dinamičke Komponente</h2>
+                <p>Slotovi omogućuju prosljeđivanje HTML sadržaja unutar komponente, dok
+                    <code>&lt;component :is="..."&gt;</code> mijenja prikaz u hodu.</p>
+                <div class="grid-split">
+                    <div class="demo-box">
+                        <component :is="activeTab"></component>
+                        <div style="margin-top: 10px;">
+                            <button @click="activeTab = 'TabA'">Tab A</button>
+                            <button @click="activeTab = 'TabB'" style="margin-left: 5px;">Tab B</button>
+                        </div>
+                    </div>
+                    <div class="demo-box" style="border-style: solid;">
+                        <slot-layout>
+                            <template #header>Zaglavlje Slota</template>
+                            Ovo je glavni sadržaj ubačen u slot.
+                        </slot-layout>
+                    </div>
+                </div>
+            </section>
+
+            <section id="scaling" class="section-card">
+                <h2>5. Skaliranje (Pinia & Routing)</h2>
+                <p>Za velike aplikacije koristimo <strong>Pinia</strong> za stanje i <strong>Vue Router</strong> za
+                    navigaciju.</p>
+                <div class="grid-split">
+                    <div class="code-box">
+                        // Pinia Store (Simulacija)<br>
+                        export const useStore = defineStore('main', { ... });
+                    </div>
+                    <div class="demo-box">
+                        <p>Status aplikacije: <strong>Spremna za produkciju</strong></p>
+                        <p style="font-size: 0.8rem;">SSR (Server-Side Rendering) i Testing su integrirani putem Vite-a
+                            i Vitest-a.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="animations" class="section-card">
+                <h2>6. Transitions & Animations</h2>
+                <p>Vue nudi ugrađene tranzicije za ulazak/izlazak elemenata iz DOM-a.</p>
+                <div class="demo-box">
+                    <button @click="showToggle = !showToggle">Toggle Prikaz</button>
+                    <transition name="fade">
+                        <div v-if="showToggle"
+                            style="padding: 20px; background: var(--accent-secondary); margin-top: 10px; border-radius: 10px;">
+                            Vidljiv sam uz animaciju!
+                        </div>
+                    </transition>
+                </div>
+            </section>
+
+            <section id="security" class="section-card">
+                <h2>7. Security & Deployment</h2>
+                <p>U 2026. sigurnost je prioritet: Sanitizacija inputa, XSS zaštita i sigurni HTTP headeri su standard
+                    pri deploymentu na Vercel ili Netlify.</p>
+            </section>
+
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

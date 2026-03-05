@@ -1,0 +1,107 @@
+:root {
+    --primarna: #0d6efd;
+    --sekundarna: #6c757d;
+    --uspjeh: #198754;
+    --pozadina: #f4f7f6;
+    --bijela: #ffffff;
+    --sjena: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    background-color: var(--pozadina);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+[v-cloak] { display: none; } /* Sprječava titranje Vue koda pri učitavanju */
+
+.spremnik-kviza {
+    width: 100%;
+    max-width: 700px;
+    margin: 50px 20px;
+}
+
+.kartica {
+    background: var(--bijela);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--sjena);
+}
+
+.zaglavlje {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.naslov { color: var(--primarna); margin: 0; }
+
+.znacka {
+    background: var(--sekundarna);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+/* Progres Bar */
+.progres-okvir {
+    height: 10px;
+    background: #e9ecef;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.progres-traka {
+    height: 100%;
+    background: var(--primarna);
+    transition: width 0.4s ease;
+}
+
+/* Odgovori */
+.popis-odgovora {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.gumb-odgovor {
+    padding: 15px;
+    text-align: left;
+    background: white;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.2s;
+}
+
+.gumb-odgovor:hover {
+    border-color: var(--primarna);
+    background-color: #f8f9fa;
+}
+
+/* Rezultati */
+.tekst-centar { text-align: center; }
+.veliki-rezultat {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--primarna);
+    margin: 20px 0;
+}
+
+.gumb-akcija {
+    width: 100%;
+    padding: 15px;
+    background: var(--uspjeh);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
