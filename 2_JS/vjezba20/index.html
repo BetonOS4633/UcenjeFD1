@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpine JS</title>
+    <script src="alpine-3.15.8.js" defer></script>
+    <style>
+        p#uvecaj, p#umanji{
+            font-size: 4rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div x-data="{ open: false }">
+        <button @click="open = true">Expand</button>
+
+        <button @click="open = false">Hide</button>
+
+        <span x-show="open">
+            Content...
+        </span>
+    </div>
+
+    <div x-data="{ brojac: 0 }">
+        <h1 x-text="brojac"></h1>
+        <p id="uvecaj" @click="brojac++">+</p>
+        <p id="umanji" @click="brojac--">-</p>
+    </div>
+</body>
+</html>

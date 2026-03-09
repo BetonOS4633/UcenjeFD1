@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlpineJS Retro Muzej</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.store('podaci', {
+                korisnik: 'RetroKorisnik99',
+                verzija: '3.15.8'
+            });
+        });
+    </script>
+    <script defer src="alpineMask-3.15.8.js"></script>
+    <script defer src="alpinejs-3.15.8.js"></script>
+</head>
+
+<body>
+
+    <div class="window">
+        <div class="title-bar">
+            <span>AlpineJS_Pregled.exe</span>
+            <span>[X]</span>
+        </div>
+        <div class="window-body">
+            <marquee>Dobrodošli u retro vodič kroz AlpineJS - Lagani JavaScript okvir za moderni web!</marquee>
+            <p>Ova stranica koristi AlpineJS verziju 3.x za demonstraciju funkcionalnosti u stilu starog operativnog
+                sustava.</p>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div class="window" x-data="{ open: false, tekst: 'Promijeni me' }">
+            <div class="title-bar"><span>Directives (Direktive)</span></div>
+            <div class="window-body">
+                <p>Osnovni gradivni blokovi koji manipuliraju DOM-om.</p>
+
+                <div class="example-box">
+                    <strong>x-show & x-on</strong><br>
+                    <button @click="open = !open">Pokaži/Sakrij poruku</button>
+                    <div x-show="open" style="margin-top:10px; color: blue;">Pozdrav iz AlpineJS-a!</div>
+                </div>
+
+                <div class="example-box">
+                    <strong>x-model</strong><br>
+                    <input type="text" x-model="tekst">
+                    <p>Live output: <span x-text="tekst"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="window" x-data="{}">
+            <div class="title-bar"><span>Magics (Magična svojstva)</span></div>
+            <div class="window-body">
+                <p>Posebna svojstva s prefiksom <code>$</code>.</p>
+
+                <div class="example-box">
+                    <strong>$el & $refs</strong><br>
+                    <button @click="$refs.ispis.innerText = 'Gumb pritisnut na: ' + $el.innerText">
+                        Klikni me
+                    </button>
+                    <p x-ref="ispis" style="font-style: italic;"></p>
+                </div>
+
+                <div class="example-box">
+                    <strong>$dispatch</strong><br>
+                    <div @obavijest.window="alert('Uhvaćen događaj: ' + $event.detail)">
+                        <button @click="$dispatch('obavijest', 'Retro Alarm!')">Pošalji događaj</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="window">
+            <div class="title-bar"><span>Globals (Globalne metode)</span></div>
+            <div class="window-body">
+                <p>Metode dostupne na <code>window.Alpine</code> objektu.</p>
+                <div class="example-box" x-data> <code class="code">Alpine.store('podaci', { korisnik: '...' })</code>
+                    <p>Koristi se za upravljanje globalnim stanjem.</p>
+
+                    <button @click="alert('Trenutni korisnik: ' + $store.podaci.korisnik)">
+                        Prikaži Store podatak
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="window" x-data="{ datum: '' }">
+            <div class="title-bar"><span>Plugins (Dodaci)</span></div>
+            <div class="window-body">
+                <p>Službena proširenja poput Mask, Intersect, Persist.</p>
+                <div class="example-box">
+                    <strong>Mask dodatak</strong><br>
+                    <label>Unesi datum (DD/MM/GGGG):</label><br>
+                    <input x-mask="*****-999-aa" placeholder="azu78-772-TT" x-model="datum">
+                    <p>Vrijednost: <span x-text="datum"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="window" x-data="{ showModal: false }">
+            <div class="title-bar"><span>Advance (Napredne tehnike)</span></div>
+            <div class="window-body">
+                <p>Teleport, x-cloak i reaktivnost.</p>
+                <div class="example-box">
+                    <strong>x-teleport</strong><br>
+                    <p>Prebacuje element na drugi dio DOM-a (npr. na kraj body-a).</p>
+                    <button @click="showModal = true">Otvori Teleport prozor</button>
+
+                    <template x-teleport="body">
+                        <div x-show="showModal"
+                            style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999;">
+                            <div class="window" style="width: 300px;">
+                                <div class="title-bar">
+                                    <span>Teleportirani prozor</span>
+                                    <button @click="showModal = false">X</button>
+                                </div>
+                                <div class="window-body">
+                                    Ovo je renderirano na kraju &lt;body&gt; oznake!
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+:root {
+    --primarna: #007bff;
+    --sekundarna: #6c757d;
+    --uspjeh: #28a745;
+    --pozadina: #f4f7f6;
+    --bijela: #ffffff;
+    --sjena: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    background-color: var(--pozadina);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+.spremnik-kviza {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.kartica {
+    background: var(--bijela);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--sjena);
+}
+
+.zaglavlje {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.naslov { margin: 0; color: var(--primarna); font-size: 1.5rem; }
+
+.badge {
+    background: var(--sekundarna);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+/* Progres bar */
+.progres-okvir {
+    height: 10px;
+    background: #e9ecef;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.progres-traka {
+    height: 100%;
+    background: var(--primarna);
+    transition: width 0.3s ease;
+}
+
+.tekst-pitanja {
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Gumbi */
+.popis-odgovora {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.gumb-odgovor {
+    width: 100%;
+    text-align: left;
+    padding: 15px 20px;
+    background: var(--bijela);
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.gumb-odgovor:hover {
+    border-color: var(--primarna);
+    background: #f8f9fa;
+}
+
+.tekst-centar { text-align: center; }
+
+.veliki-rezultat {
+    font-size: 5rem;
+    font-weight: bold;
+    color: var(--primarna);
+    margin: 20px 0;
+}
+
+.gumb-akcija {
+    width: 100%;
+    padding: 15px;
+    background: var(--uspjeh);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.gumb-akcija:hover { opacity: 0.9; }

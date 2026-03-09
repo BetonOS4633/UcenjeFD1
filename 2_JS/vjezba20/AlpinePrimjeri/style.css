@@ -1,0 +1,90 @@
+:root {
+    --bg-color: #008080; /* Klasična Win95 teal boja */
+    --win-gray: #c0c0c0;
+    --win-border-light: #ffffff;
+    --win-border-dark: #808080;
+    --win-blue: #000080;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: "MS Sans Serif", "Tahoma", sans-serif;
+    margin: 20px;
+    font-size: 14px;
+}
+
+.window {
+    background: var(--win-gray);
+    border: 2px solid;
+    border-color: var(--win-border-light) var(--win-border-dark) var(--win-border-dark) var(--win-border-light);
+    box-shadow: 1px 1px 0 0 #000;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title-bar {
+    background: linear-gradient(90deg, var(--win-blue), #1084d0);
+    color: white;
+    padding: 3px 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.window-body {
+    padding: 15px;
+}
+
+h2 { font-size: 1.2rem; margin-top: 0; border-bottom: 1px solid var(--win-border-dark); padding-bottom: 5px; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+.example-box {
+    border: 1px inset var(--win-border-light);
+    background: #eee;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+button {
+    background: var(--win-gray);
+    border: 2px solid;
+    border-color: var(--win-border-light) var(--win-border-dark) var(--win-border-dark) var(--win-border-light);
+    padding: 4px 12px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+button:active {
+    border-color: var(--win-border-dark) var(--win-border-light) var(--win-border-light) var(--win-border-dark);
+}
+
+input {
+    border: 2px inset var(--win-border-light);
+    padding: 3px;
+    background: white;
+}
+
+.code {
+    font-family: "Courier New", monospace;
+    background: #000;
+    color: #0f0;
+    padding: 5px;
+    display: block;
+    margin: 10px 0;
+    font-size: 12px;
+}
+
+marquee {
+    background: #000;
+    color: #ffff00;
+    padding: 5px;
+    border: 2px inset;
+}
