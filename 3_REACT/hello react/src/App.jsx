@@ -16,7 +16,11 @@ function App() {
   return (
     
   <Container>
-       
+
+    <a href="moduli/index.html">Moduli</a>
+    <hr />
+
+
 
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={react} />
