@@ -1,14 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import{Container} from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 import react from './assets/react.svg';
-import Table from 'react-bootstrap/Table';
-
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import './App.css'
+import './App.css';
+import {  Button, Card, Container, Navbar, NavDropdown, Table } from 'react-bootstrap';
 
 function App() {
   
@@ -20,7 +13,7 @@ function App() {
     <a href="moduli/index.html">Moduli</a>
     <hr />
 
-
+<CardLink
 
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={react} />
@@ -34,7 +27,7 @@ function App() {
       </Card.Body>
     </Card>
 
-    <Table striped bordered hover>
+    <Table>
       <thead>
         <tr>
           <th>#</th>
