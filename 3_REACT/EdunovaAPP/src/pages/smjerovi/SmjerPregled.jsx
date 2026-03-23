@@ -4,6 +4,8 @@ import { Table } from "react-bootstrap"
 import { GrValidate } from "react-icons/gr"
 import { NumericFormat } from "react-number-format"
 import FormatDatum from "../../components/FormatDatum"
+import { Link } from "react-router-dom"
+import { RouteNames } from "../../constants"
 
 export default function SmjerPregled() {
 
@@ -19,6 +21,14 @@ export default function SmjerPregled() {
 
     return (
     <>
+    <Link to={RouteNames.SMJEROVI_NOVI} 
+    className="btn btn-success w-100 mb-3 mt-3">
+    Dodavanje novog smjera
+
+    </Link>
+
+
+    
         <Table>
             <thead>
                 <tr>
