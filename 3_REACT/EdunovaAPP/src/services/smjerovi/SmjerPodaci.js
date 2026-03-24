@@ -9,7 +9,7 @@ export const smjerovi=[
     },{
         sifra:2,
         naziv:'Java programiranje',
-        trajanje:130,
+        trajanje:145,
         cijena:1500.99,
         datumPokretanja:'2024-03-01T17:00:00',
         aktivan:false

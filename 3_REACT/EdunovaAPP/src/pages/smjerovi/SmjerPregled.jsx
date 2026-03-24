@@ -15,6 +15,7 @@ export default function SmjerPregled() {
     },[])
     async function ucitajSmjerove() {
         await SmjerService.get().then((odgovor) => {
+            console.table(odgovor.data)
             setSmjerovi(odgovor.data)
         });
     }
@@ -43,7 +44,7 @@ export default function SmjerPregled() {
             </thead>
             <tbody>
                 {smjerovi && smjerovi.map((smjer)=>(
-                    <tr>
+                    <tr key={smjer.sifra}>
                         <td>{smjer.naziv}</td>
                         <td>{smjer.trajanje}</td>
                         <td><NumericFormat
