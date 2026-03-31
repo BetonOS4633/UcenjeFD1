@@ -4,6 +4,22 @@ import { smjerovi } from "./SmjerPodaci";
 async function get() {
     return {data: [...smjerovi]} // [...smjerovi] je kopija smjerova
 }
+// 2/4
+async function getBySifra(sifra){
+    return{data: smjerovi.find(s=>sifra===parseInt(sifra))}
+}
+
+// 3/4   Update od CRUD
+
+async function promjeni(sifra,smjer){
+    const index = nadiIndex(sifra)
+    smjerovi[index]= {...smjerovi[index], ...smjer}
+}
+    
+function nadiIndex(sifra){
+    return smjerovi.findIndex(s => s.sifra===parseInt(sifra))
+}
+
 
 async function getBySifra(sifra) {
    return {data: smjerovi.find(s => s.sifra === parseInt(sifra))} 

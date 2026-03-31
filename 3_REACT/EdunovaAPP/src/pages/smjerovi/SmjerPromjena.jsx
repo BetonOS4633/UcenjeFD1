@@ -1,45 +1,48 @@
 import { Button, Col, Form, Row } from "react-bootstrap";
-import { Link, useNavigate, useParams } from "react-router-dom";
+
 import { RouteNames } from "../../constants";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import SmjerService from "../../services/smjerovi/SmjerService";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 
 export default function SmjerPromjena(){
 
-    const navigate = useNavigate()
+    const navigate=useNavigate()
     const params = useParams()
-    const [smjer,setSmjer] = useState({})
-    const [aktivan,setAktivan] = useState(false)
+    const[smjer,setSmjer]=useState({})
+    const [aktivan,setAktiva] = useState(false)
 
     async function ucitajSmjer() {
-        await SmjerService.getBySifra(params.sifra).then((odgovor)=>{
-            
-            const s = odgovor.data
-            // po potrebi prilagođavam podatke
-            
-            s.datumPokretanja = s.datumPokretanja.substring(0,10)
-            
-            setSmjer(s)
+        await SmjerService.getBySifra(params.sifra).then((odgovor)=>
+       
+       
+            {const s=odgovor.data
+                setAktivan(s.aktivan)
+                setSmjer(s)
 
-            setAktivan(s.aktivan)
-        })
+            })
+
     }
 
     useEffect(()=>{
         ucitajSmjer()
     },[])
 
+
+
     async function promjeni(smjer){
-        //console.table(smjer) // ovo je za kontrolu da li je sve OK
-        await SmjerService.promjeni(params.sifra,smjer).then(()=>{
-            navigate(RouteNames.SMJEROVI)
-        })
+        //console.table(smjer)  //ovo je za kontrolu
+        await SmjerService.promjeni(smjer).then(()=>{
+            navigate(RouteNames.SMJEROVI)})
     }
 
 
-    function odradiSubmit(e){ //e je event
-        e.preventDefault() // nemoj odraditi submit
-        const podaci = new FormData(e.target)
+
+    function odradiSubmit(e){   //e je event
+        e.preventDefault();     // nemoj odraditi submint
+        const podaci = new FormData(e.target);
+
         promjeni({
             naziv: podaci.get('naziv'),
             trajanje: parseInt(podaci.get('trajanje')),
