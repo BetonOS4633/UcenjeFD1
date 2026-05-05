@@ -1,84 +1,87 @@
 import { useEffect, useState } from "react"
 import SmjerService from "../../services/smjerovi/SmjerService"
-import { Table, Button } from "react-bootstrap"
-import { NumericFormat } from "react-number-format"
-import { GrValidate } from "react-icons/gr"
-import FormatDatuma from "../../components/FormatDatuma"
+import GrupaService from "../../services/grupe/GrupaService"
 import { Link, useNavigate } from "react-router-dom"
-import { RouteNames } from "../../constants"
+import { IME_APLIKACIJE, RouteNames } from "../../constants"
+import useBreakpoint from "../../hooks/useBreakpoint"
+import SmjerPregledGrid from "./SmjerPregledGrid"
+import SmjerPregledTablica from "./SmjerPregledTablica"
+import useLoading from "../../hooks/useLoading"
 
 export default function SmjerPregled() {
 
     const navigate = useNavigate()
-    const [smjerovi, setSmjerovi] = useState([])
+    const sirina = useBreakpoint();
 
+    const [smjerovi, setSmjerovi] = useState([])
+    const { showLoading, hideLoading } = useLoading()
+
+    useEffect(()=>{document.title='Smjerovi, ' + IME_APLIKACIJE})
 
     useEffect(() => {
         ucitajSmjerove()
     }, [])
 
     async function ucitajSmjerove() {
+        showLoading();
         await SmjerService.get().then((odgovor) => {
-
-            // u dev modu (na našem računalu) ispisati će dva puta, sve će biti u redu u produkciji
-          //  console.table(odgovor.data)
-
+            if (!odgovor.success) {
+                alert('Nije implementiran servis')
+                return
+            }
             setSmjerovi(odgovor.data)
+            hideLoading()
         })
     }
 
+    async function brisanje(sifra) {
+        if (!confirm('Sigurno obrisati?')) return;
+
+        // Provjeri da li je smjer korišten u grupama
+        const grupeRezultat = await GrupaService.get();
+        if (grupeRezultat.success) {
+            const grupeKojeKoristeSmjer = grupeRezultat.data.filter(grupa => grupa.smjer === sifra);
+
+            if (grupeKojeKoristeSmjer.length > 0) {
+                alert(`Ne možete obrisati ovaj smjer jer je postavljen na ${grupeKojeKoristeSmjer.length} grupa/e. Prvo obrišite ili promijenite smjer u tim grupama.`);
+                return;
+            }
+        }
+        showLoading()
+         // samo za potrebe testa prikaza rada loading
+        await new Promise(resolve => setTimeout(resolve, 2000));
+    
+
+        await SmjerService.obrisi(sifra);
+        await SmjerService.get().then((odgovor) => {
+            setSmjerovi(odgovor.data)
+        })
+        hideLoading()
+    }
 
     return (
         <>
-            <Link to={RouteNames.SMJEROVI_NOVI} 
-            className="btn btn-success w-100 mb-3 mt-3">
+            <Link to={RouteNames.SMJEROVI_NOVI}
+                className="btn btn-success w-100 my-3">
                 Dodavanje novog smjera
             </Link>
-            <Table>
-                <thead>
-                    <tr>
-                        <th>Naziv</th>
-                        <th>Trajanje</th>
-                        <th>Cijena</th>
-                        <th>Datum pokretanja</th>
-                        <th>Aktivan</th>
-                        <th>Akcija</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {smjerovi && smjerovi.map((smjer) => (
-                        <tr key={smjer.sifra}>
-                            <td>{smjer.naziv}</td>
-                            <td>{smjer.trajanje}</td>
-                            <td>
-                                <NumericFormat
-                                    value={smjer.cijena}
-                                    displayType={'text'}
-                                    thousandSeparator='.'
-                                    decimalSeparator=','
-                                    suffix={' €'}
-                                    decimalScale={2}
-                                    fixedDecimalScale
-                                />
-                            </td>
-                            <td>
-                                <FormatDatuma datum={smjer.datumPokretanja} />
-                            </td>
-                            <td>
-                                <GrValidate
-                                    size={25}
-                                    color={smjer.aktivan ? 'green' : 'red'}
-                                />
-                            </td>
-                            <td>
-                                <Button onClick={()=>{navigate(`/smjerovi/${smjer.sifra}`)}}>
-                                    Promjena
-                                </Button>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </Table>
+            {/* tableti prema manje */}
+            {['xs', 'sm', 'md'].includes(sirina) ? (
+                <SmjerPregledGrid 
+                    smjerovi={smjerovi} 
+                    navigate={navigate} 
+                    brisanje={brisanje} 
+                />
+            ) : (
+                <SmjerPregledTablica
+                    smjerovi={smjerovi} 
+                    navigate={navigate} 
+                    brisanje={brisanje} 
+                />
+            )}
+
+
+
         </>
     )
 }

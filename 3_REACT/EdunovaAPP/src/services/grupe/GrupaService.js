@@ -1,27 +1,27 @@
-import SmjerServiceLocalStorage from "./SmjerServiceLocalStorage";
-import SmjerServiceMemorija from "./SmjerServiceMemorija";
+import GrupaServiceLocalStorage from "./GrupaServiceLocalStorage";
+import GrupaServiceMemorija from "./GrupaServiceMemorija";
 import { DATA_SOURCE } from "../../constants";
 
 let Servis = null;
 
-
+// 1. Odabir servisa
 switch (DATA_SOURCE) {
     case 'memorija':
-        Servis = SmjerServiceMemorija;
+        Servis = GrupaServiceMemorija;
         break;
     case 'localStorage':
-        Servis = SmjerServiceLocalStorage;
+        Servis = GrupaServiceLocalStorage;
         break;
     default:
         Servis = null;
 }
 
-
+// 2. Definiranje defaultnog (praznog) ponašanja ako Servis nije pronađen
 const PrazanServis = {
     get: async () => ({ success: false, data: []}),
     getBySifra: async (sifra) => ({ success: false, data: {} }),
-    dodaj: async (smjer) => { console.error("Servis nije učitan"); },
-    promjeni: async (sifra, smjer) => { console.error("Servis nije učitan"); },
+    dodaj: async (grupa) => { console.error("Servis nije učitan"); },
+    promjeni: async (sifra, grupa) => { console.error("Servis nije učitan"); },
     obrisi: async (sifra) => { console.error("Servis nije učitan"); }
 };
 
@@ -32,7 +32,7 @@ const AktivniServis = Servis || PrazanServis;
 export default {
     get: () => AktivniServis.get(),
     getBySifra: (sifra) => AktivniServis.getBySifra(sifra),
-    dodaj: (smjer) => AktivniServis.dodaj(smjer),
-    promjeni: (sifra, smjer) => AktivniServis.promjeni(sifra, smjer),
+    dodaj: (grupa) => AktivniServis.dodaj(grupa),
+    promjeni: (sifra, grupa) => AktivniServis.promjeni(sifra, grupa),
     obrisi: (sifra) => AktivniServis.obrisi(sifra)
 };

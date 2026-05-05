@@ -5,3 +5,21 @@ npm install react-router-dom
 
 npm install react-number-format
 npm install react-icons
+
+// lottie animacija
+npm install @lottiefiles/dotlottie-react
+
+// faker za generiranje podataka
+npm install @faker-js/faker
+
+// PDF
+npm install jspdf jspdf-autotable
+
+// generiranje wod dokumenta
+npm install docx
+
+// RIVE animacije
+npm install @rive-app/react-canvas
+
+// za hash lozinki
+npm install bcryptjs
